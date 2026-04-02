@@ -1,0 +1,37 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nline" x1="0" y1="0" x2="1200" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e5e7eb" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#d1d5db" stop-opacity="0.25"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <g stroke="url(#nline)" stroke-width="2" opacity="0.7">
+    <path d="M140 220C260 260 310 390 430 430C560 470 680 430 770 520C860 610 860 720 960 790"/>
+    <path d="M180 820C280 760 350 650 470 640C620 625 700 700 820 650C920 610 980 530 1040 450"/>
+    <path d="M310 120C360 210 430 250 520 290C650 350 780 320 900 240"/>
+  </g>
+
+  <g fill="#f3f4f6" opacity="0.8">
+    <circle cx="140" cy="220" r="10"/>
+    <circle cx="430" cy="430" r="8"/>
+    <circle cx="770" cy="520" r="9"/>
+    <circle cx="960" cy="790" r="10"/>
+    <circle cx="180" cy="820" r="9"/>
+    <circle cx="470" cy="640" r="8"/>
+    <circle cx="820" cy="650" r="9"/>
+    <circle cx="1040" cy="450" r="8"/>
+    <circle cx="310" cy="120" r="8"/>
+    <circle cx="520" cy="290" r="7"/>
+    <circle cx="900" cy="240" r="9"/>
+  </g>
+
+  <g opacity="0.25" filter="url(#soft)">
+    <circle cx="430" cy="430" r="70" fill="#f3f4f6"/>
+    <circle cx="820" cy="650" r="80" fill="#e5e7eb"/>
+  </g>
+</svg>
+

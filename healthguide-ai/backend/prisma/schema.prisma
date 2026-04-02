@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String         @id @default(cuid())
+  email        String         @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  checks       SymptomCheck[]
+
+  @@map("users")
+}
+
+model SymptomCheck {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  symptoms        String[]
+  age             Int?
+  gender          String?
+  severity        String?
+  duration        String?
+  analysis        Json
+  urgencyLevel    String
+  createdAt       DateTime @default(now())
+
+  @@map("symptom_checks")
+}
