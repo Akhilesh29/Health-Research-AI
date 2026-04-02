@@ -1,5 +1,5 @@
 # Health Research
-Health Research is a web app that helps people make sense of symptoms without jumping to conclusions. You sign in, describe what you’re feeling, and get a clear, structured readout: what might be going on, how urgent it feels, what to watch for, and practical next steps. Your checks are saved so you can see patterns over time. It can also suggest nearby doctors and hospitals based on where you are (or a location you enter for someone else), with map links and contact details when available. It’s built to feel calm and informative,not a replacement for a real doctor, but a better starting point than guessing alone.
+Health Research is a web app that helps people make sense of symptoms without jumping to conclusions. You sign in, describe what you’re feeling, and get a clear, structured readout: what might be going on, how urgent it feels, what to watch for, and practical next steps. Your checks are saved so you can see patterns over time. It can also suggest nearby doctors and hospitals based on where you are with map links and contact details when available. It’s built to feel calm and informative,not a replacement for a real doctor, but a better starting point than guessing alone.
 
 
 ## Architecture
