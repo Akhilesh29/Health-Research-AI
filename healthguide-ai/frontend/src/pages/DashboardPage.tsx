@@ -39,7 +39,7 @@ export default function DashboardPage() {
   return (
     <div className="space-y-6 animate-fade-in">
       {/* Header */}
-      <div className="flex items-end justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
           <p className="text-sm text-gray-400 font-medium">
             {format(new Date(), 'EEEE, MMMM d')}
@@ -48,7 +48,7 @@ export default function DashboardPage() {
             {greeting()}, {user?.name?.split(' ')[0]}
           </h1>
         </div>
-        <Link to="/app/checker" className="btn-primary">
+        <Link to="/app/checker" className="btn-primary w-full sm:w-auto">
           <Stethoscope size={15} />
           New Check
         </Link>

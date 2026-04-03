@@ -81,13 +81,13 @@ export default function CheckerPage() {
   if (result) {
     return (
       <div className="space-y-5 animate-fade-in">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h1 className="font-display text-2xl font-bold text-gray-900">Analysis Result</h1>
             <p className="text-sm text-gray-400 mt-0.5">Technical symptom insight</p>
             <p className="text-xs text-brand-500 mt-1">Nearby doctors/hospitals are available below this result.</p>
           </div>
-          <button onClick={handleReset} className="btn-secondary text-xs">
+          <button onClick={handleReset} className="btn-secondary text-xs w-full sm:w-auto">
             New Check
           </button>
         </div>
@@ -189,7 +189,7 @@ export default function CheckerPage() {
           </button>
 
           {showContext && (
-            <div className="px-5 pb-5 grid grid-cols-2 gap-4 border-t border-gray-50">
+            <div className="px-5 pb-5 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-gray-50">
               <div>
                 <label className="block text-xs font-semibold text-gray-500 mb-1.5">Age</label>
                 <input

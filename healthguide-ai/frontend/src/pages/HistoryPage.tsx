@@ -33,10 +33,10 @@ function CheckCard({ check }: { check: SymptomCheck }) {
   return (
     <div className="card overflow-hidden">
       <div
-        className="group flex items-center gap-4 px-5 py-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-800/80 transition-colors"
+        className="group flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 px-4 sm:px-5 py-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-800/80 transition-colors"
         onClick={() => setExpanded((e) => !e)}
       >
-        <div className="h-9 w-9 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
+        <div className="h-9 w-9 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0 self-start sm:self-auto">
           <AlertCircle size={15} className="text-brand-500" />
         </div>
 
@@ -52,7 +52,7 @@ function CheckCard({ check }: { check: SymptomCheck }) {
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
           <span className={urgencyBadge(check.urgencyLevel)}>{check.urgencyLevel}</span>
           <button
             onClick={(e) => {
@@ -132,21 +132,21 @@ export default function HistoryPage() {
 
           {/* Pagination */}
           {data.pagination.pages > 1 && (
-            <div className="flex items-center justify-between pt-2">
+            <div className="flex items-center justify-between gap-2 pt-2">
               <button
                 onClick={() => setPage((p) => Math.max(1, p - 1))}
                 disabled={page === 1}
-                className="btn-secondary text-xs py-2"
+                className="btn-secondary text-xs py-2 px-3 sm:px-5"
               >
                 Previous
               </button>
-              <span className="text-xs text-gray-500">
+              <span className="text-[11px] sm:text-xs text-gray-500 text-center">
                 Page {page} of {data.pagination.pages}
               </span>
               <button
                 onClick={() => setPage((p) => Math.min(data.pagination.pages, p + 1))}
                 disabled={page === data.pagination.pages}
-                className="btn-secondary text-xs py-2"
+                className="btn-secondary text-xs py-2 px-3 sm:px-5"
               >
                 Next
               </button>

@@ -73,25 +73,25 @@ export default function LandingPage() {
 
         {/* Top bar */}
         <header className="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-gray-100 dark:bg-slate-950/60 dark:border-slate-800">
-          <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 shadow-brand">
+          <div className="mx-auto max-w-6xl px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg sm:rounded-xl bg-brand-600 shadow-brand flex-shrink-0">
                 <svg viewBox="0 0 24 24" className="w-5 h-5" fill="white">
                   <rect x="10" y="3" width="4" height="18" rx="1.5" />
                   <rect x="3" y="10" width="18" height="4" rx="1.5" />
                 </svg>
               </div>
               <div className="leading-tight">
-                <p className="text-sm font-semibold text-gray-900 dark:text-white">Health Research</p>
+                <p className="text-[12px] sm:text-sm font-semibold text-gray-900 dark:text-white whitespace-nowrap">Health Research AI</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
-              <Link to="/auth" className="btn-ghost">
+            <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+              <Link to="/auth" className="btn-ghost px-2.5 sm:px-4 py-2 text-xs sm:text-sm whitespace-nowrap">
                 Sign in
               </Link>
-              <Link to="/auth" className="btn-primary">
-                Get started <ArrowRight size={16} />
+              <Link to="/auth" className="btn-primary px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm whitespace-nowrap">
+                Get started <ArrowRight size={14} className="sm:w-4 sm:h-4" />
               </Link>
             </div>
           </div>
@@ -218,7 +218,7 @@ export default function LandingPage() {
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="text-xs font-semibold text-brand-700 uppercase tracking-widest">
-                Why Health Research
+                Why Health Research AI
               </p>
               <h2 className="mt-2 text-2xl lg:text-3xl font-semibold text-gray-900 tracking-tight">
                 Built for real-world care decisions.
@@ -256,8 +256,9 @@ export default function LandingPage() {
 
         <footer className="mx-auto max-w-6xl px-6 pb-10 text-xs text-gray-500">
           <p>
-            Health Research provides general information and does not replace professional medical advice.
+            Health Research AI provides general information and does not replace professional medical advice.
           </p>
+          <p className="mt-2">Created by - Akhilesh</p>
         </footer>
       </div>
     </div>

@@ -271,19 +271,19 @@ export default function SymptomResult({ analysis, symptoms }: Props) {
       </div>
 
       {/* Nearby care */}
-      <div className="card p-5">
-        <div className="flex items-center justify-between gap-3 mb-3">
+      <div className="card p-4 sm:p-5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-2">
             <MapPin size={16} className="text-brand-500" />
             <h3 className="text-sm font-semibold text-gray-700">Nearby Care</h3>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <select
               value={selectedCareType}
               onChange={(e) =>
                 setSelectedCareType(e.target.value as 'doctor' | 'hospital' | 'emergency' | 'auto')
               }
-              className="input !h-8 !py-1 !px-2 text-xs"
+              className="input !h-8 !py-1 !px-2 text-xs min-w-[180px] sm:min-w-0"
             >
               <option value="auto">Auto (from urgency)</option>
               <option value="doctor">Doctor/Clinic</option>
@@ -296,7 +296,7 @@ export default function SymptomResult({ analysis, symptoms }: Props) {
 
         {!coords ? (
           <div className="space-y-2">
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2 mb-2 flex-wrap">
               <button
                 type="button"
                 onClick={() => setLocationMode('auto')}
@@ -318,7 +318,7 @@ export default function SymptomResult({ analysis, symptoms }: Props) {
                 <p className="text-xs text-gray-500">
                   Use your location to find nearby {careType === 'doctor' ? 'doctors/clinics' : 'hospitals'}.
                 </p>
-                <button type="button" onClick={requestLocation} className="btn-secondary text-xs">
+                <button type="button" onClick={requestLocation} className="btn-secondary text-xs w-full sm:w-auto">
                   <Navigation size={14} />
                   Find nearby care
                 </button>
@@ -328,7 +328,7 @@ export default function SymptomResult({ analysis, symptoms }: Props) {
                 <p className="text-xs text-gray-500">
                   Enter city/area/address to search nearby care for someone else.
                 </p>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                   <input
                     value={manualLocation}
                     onChange={(e) => setManualLocation(e.target.value)}
@@ -339,7 +339,7 @@ export default function SymptomResult({ analysis, symptoms }: Props) {
                     type="button"
                     onClick={handleManualLocationSearch}
                     disabled={manualLoading}
-                    className="btn-secondary text-xs"
+                    className="btn-secondary text-xs w-full sm:w-auto"
                   >
                     {manualLoading ? 'Searching...' : 'Use location'}
                   </button>
@@ -359,15 +359,15 @@ export default function SymptomResult({ analysis, symptoms }: Props) {
           </div>
         ) : nearbyQuery.data?.places?.length ? (
           <div className="space-y-2">
-            <div className="flex items-center justify-end gap-2">
-              <button type="button" onClick={handleChangeLocation} className="btn-ghost text-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-2">
+              <button type="button" onClick={handleChangeLocation} className="btn-ghost text-xs w-full sm:w-auto">
                 Change location
               </button>
               <button
                 type="button"
                 onClick={handleRefreshNearby}
                 disabled={manualLoading || nearbyQuery.isFetching}
-                className="btn-secondary text-xs"
+                className="btn-secondary text-xs w-full sm:w-auto"
               >
                 {manualLoading || nearbyQuery.isFetching ? 'Refreshing...' : 'Refresh'}
               </button>

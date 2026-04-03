@@ -62,9 +62,9 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-brand-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-950 flex">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-brand-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-950 flex overflow-y-auto">
       {/* Left panel — branding */}
-      <div className="hidden lg:flex lg:w-1/2 flex-col justify-between bg-brand-600 p-12 text-white relative overflow-hidden">
+      <div className="hidden xl:flex xl:w-1/2 flex-col justify-between bg-brand-600 p-10 2xl:p-12 text-white relative overflow-hidden">
         <div className="relative">
           <div className="flex items-center gap-3 mb-12">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 backdrop-blur">
@@ -73,7 +73,7 @@ export default function AuthPage() {
                 <rect x="3" y="10" width="18" height="4" rx="1.5" />
               </svg>
             </div>
-            <span className="font-display font-bold text-xl text-white">Health Research</span>
+            <span className="font-display font-bold text-xl text-white">Health Research AI</span>
           </div>
 
           <h1 className="font-display text-4xl font-bold leading-tight mb-4 text-white">
@@ -89,7 +89,7 @@ export default function AuthPage() {
             </p>
             <div className="mt-4 flex items-center justify-center gap-2">
               <span className="h-px w-8 bg-white/30" />
-              <p className="text-[11px] uppercase tracking-[0.16em] text-white/65">Health Research Principle</p>
+              <p className="text-[11px] uppercase tracking-[0.16em] text-white/65">Health Research AI Principle</p>
               <span className="h-px w-8 bg-white/30" />
             </div>
           </div>
@@ -113,20 +113,20 @@ export default function AuthPage() {
       </div>
 
       {/* Right panel — form */}
-      <div className="flex flex-1 items-center justify-center p-6">
-        <div className="w-full max-w-sm animate-slide-up">
+      <div className="flex flex-1 items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div className="w-full max-w-sm sm:max-w-md animate-slide-up">
           {/* Mobile logo */}
-          <div className="flex items-center gap-2 mb-8 lg:hidden">
+          <div className="flex items-center gap-2 mb-6 sm:mb-8 xl:hidden">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600">
               <svg viewBox="0 0 24 24" className="w-4 h-4" fill="white">
                 <rect x="10" y="3" width="4" height="18" rx="1.5" />
                 <rect x="3" y="10" width="18" height="4" rx="1.5" />
               </svg>
             </div>
-            <span className="font-display font-bold text-gray-900 dark:text-white">Health Research</span>
+            <span className="font-display font-bold text-gray-900 dark:text-white">Health Research AI</span>
           </div>
 
-          <h2 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-1">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-1">
             {mode === 'login' ? 'Welcome back' : 'Create account'}
           </h2>
           <p className="text-sm text-gray-500 dark:text-slate-400 mb-6">
@@ -194,7 +194,7 @@ export default function AuthPage() {
               </div>
             </div>
 
-            <button type="submit" disabled={loading} className="btn-primary w-full mt-2">
+            <button type="submit" disabled={loading} className="btn-primary w-full mt-2 py-3">
               {loading && <Loader2 size={15} className="animate-spin" />}
               {mode === 'login' ? 'Sign In' : 'Create Account'}
             </button>
