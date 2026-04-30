@@ -52,10 +52,21 @@ export default function AuthPage() {
       setAuth(data.user, data.token);
       navigate('/app/dashboard');
     } catch (err: unknown) {
-      const msg =
-        (err as { response?: { data?: { error?: string } } })?.response?.data?.error ??
-        'Something went wrong. Please try again.';
+      const axiosError = err as { response?: { data?: { error?: string } }; message?: string; code?: string };
+      let msg: string;
+
+      if (axiosError.code === 'ERR_NETWORK') {
+        msg = 'Network error: Cannot connect to server. Please check your internet connection or try again later.';
+      } else if (axiosError.code === 'ERR_CANCELED') {
+        msg = 'Request was canceled. Please try again.';
+      } else if (!axiosError.response) {
+        msg = 'Unable to reach the server. The API might be down or CORS may be misconfigured.';
+      } else {
+        msg = axiosError.response.data?.error ?? 'Something went wrong. Please try again.';
+      }
+
       setError(msg);
+      console.error('Auth error:', err);
     } finally {
       setLoading(false);
     }

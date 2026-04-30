@@ -2,12 +2,10 @@ import { Request, Response, NextFunction } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt, { SignOptions } from 'jsonwebtoken';
 import { z } from 'zod';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '../lib/prisma';
 import { env } from '../config/env';
 import { AuthenticatedRequest } from '../types';
 import { createError } from '../middleware/error.middleware';
-
-const prisma = new PrismaClient();
 
 const signupSchema = z.object({
   name: z.string().min(2).max(100),

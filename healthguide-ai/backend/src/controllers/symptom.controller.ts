@@ -1,12 +1,10 @@
 import { Response, NextFunction } from 'express';
 import { z } from 'zod';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '../lib/prisma';
 import { AuthenticatedRequest } from '../types';
 import { analyzeSymptoms } from '../services/ai.service';
 import { findNearbyCare, NearbyCareType } from '../services/nearby-care.service';
 import { createError } from '../middleware/error.middleware';
-
-const prisma = new PrismaClient();
 const symptomCheckSchema = z.object({
   symptoms: z.array(z.string().min(1)).min(1).max(20),
   age: z.number().int().min(0).max(150).optional(),
